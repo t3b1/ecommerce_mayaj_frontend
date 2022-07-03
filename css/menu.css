@@ -1,0 +1,311 @@
+/* Enlaces del menu nav          */
+.menu {
+    background: #232f3e;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+.menu .container-btn-menu{
+    /*display: flex;*/
+    display: none;
+    justify-content: space-between;
+}
+.menu .container-btn-menu button{
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+}
+.menu .container-btn-menu button:hover{
+    border: 1px solid rgb(255,255,255, .4);
+}
+.menu .container-btn-menu .btn-menu-cerrar{
+    display: none;
+}
+.menu .container-btn-menu .btn-menu-cerrar.activo{
+    display: inline-block;
+}
+.menu .container-icon {
+    position: relative;
+    margin-left: 20px;
+    
+}
+.menu .icon-nav{
+    padding: 5px 10px 5px 10px;
+    margin: 2px;
+    display:inline-block;
+    width: 90%;
+    text-align: center;
+}
+.menu .container-enlaces-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu .btn-secciones {
+    color: #fff;
+    padding: 7px;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    font-size: 12px;
+    cursor: defaults;
+}
+.menu .btn-secciones i {
+    margin-left: 10px;
+    position: relative;
+    bottom: 1px;
+}
+.menu .btn-secciones:hover {
+    border: 1px solid rgb(255,255,255, .4);
+}
+.menu .enlaces a {
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 7px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.menu .enlaces a:hover {
+    border: 1px solid rgb(255,255,255, .4);
+}
+/*-- grid de categoria*/
+.container-grid {
+    position: relative;
+}
+.grid {
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 5px;
+    z-index: 1000;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "categoria subcategoria subcategoria subcategoria";
+}
+.activo {
+    display: grid;
+}
+.grid::before {
+    content: "";
+    display: block;
+    background: transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: -5px;
+    left: 65px;
+}
+.grid > div {
+    background: #fff;
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, .10);
+}
+.grid .btn-regresar {
+    display: none;
+    background: #232f3e;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.grid .categoria {
+    grid-area: categoria;
+    padding-top: 10px;
+    min-height: 300px;
+    overflow: auto;
+}
+.subtitulo {
+    display: none;
+}
+.categoria a {
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.categoria a i {
+    display: none;
+}
+.categoria a:hover {
+    color: green;
+    font-weight: bold;
+}
+.categoria a:hover i {
+    display: inline-block;
+}
+/* grid subcategoria*/
+.grid .contenedor-subcategoria {
+    grid-area: subcategoria;
+}
+.grid .subcategoria {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+.grid .subcategoria.activo {
+    display: grid;
+}
+.grid .subcategoria img {
+    width: 100%;
+    vertical-align: top;
+    height: 100%;
+    object-fit: cover;
+}
+.grid .enlaces-subcategoria {
+    padding-top: 10px;
+    height: 100%;
+    max-height: 300px;
+    overflow: auto;
+}
+.grid .enlaces-subcategoria a {
+    color: #000;
+    display: block;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+.grid .enlaces-subcategoria a:hover {
+    color: green;
+}
+.grid .subtitulo {
+    font-size: 18px;
+    font-weight: normal;
+    color: green;
+    padding: 10px 20px;
+}
+
+.grid .baner-subcategoria a {
+    display: block;
+    height: 100%;
+}
+
+.grid .galeria-subcategoria {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+}
+.grid .galeria-subcategoria a {
+    width: 50%;
+    height: 50%;
+}
+/* mediaqueris */
+
+@media screen and (max-width: 1000px){
+    .menu .container-enlaces-nav {
+        padding: 0 10px;
+    }
+
+    .menu .contenedor {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .menu .contenedor {
+        width: 90%;
+    }
+    .menu .container-btn-menu {
+        display: flex;
+    }
+    .menu .container-enlaces-nav {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        left: 0;
+        background: #232f3e;
+        height: 100vh;
+        width: 80%;
+        z-index: 2000;
+        transition: .3s ease all;
+        transform: translate(-100% );
+    }
+    .menu .container-enlaces-nav.activo {
+        transform: translate(0%);
+    }
+    .menu .btn-secciones {
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+    }
+    .menu .btn-secciones i {
+        position: static;
+        margin-left: 20px;
+        transform: rotate(-90deg );
+    }
+    .menu .enlaces{
+        width: 100%;
+    }
+    .menu .enlaces a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .grid {
+        display: grid;
+        transition: .3s ease all;
+        transform: translate(-100%);
+        z-index: 3000;
+        width: 80%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        grid-template-areas: "categoria categoria categoria categoria";
+    }
+
+    .grid.activo {
+        transform: translate(0);
+    }
+    .grid::before{
+        display: none;
+    }
+    .grid .btn-regresar {
+        display: inline-block;
+    }
+    .grid .categoria .subtitulo {
+        display: block;
+    }
+
+    .grid .contenedor-subcategoria {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: .3s ease all;
+        overflow: auto;
+    }
+    .grid .contenedor-subcategoria.activo {
+        transform: translate(0);
+    }
+    .grid .contenedor-subcategoria .subcategoria {
+        grid-template-columns: 1fr;
+
+    }
+    .grid .contenedor-subcategoria .baner-subcategoria {
+        width: 100%;
+        min-height: 250px;
+        max-height: 350px;
+    }
+    .grid .contenedor-subcategoria .enlaces-subcategoria {
+        min-height: 50vh;
+        overflow: auto;
+    }
+    .grid .contenedor-subcategoria .galeria-subcategoria {
+        width: 25%;
+        height: 100%;
+    }
+}
