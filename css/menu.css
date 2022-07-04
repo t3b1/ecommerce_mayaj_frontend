@@ -4,6 +4,38 @@
     padding: 5px 0;
     margin-bottom: 20px;
 }
+.conten {
+    background: #171f29;
+    padding: 0;
+    margin: 0;
+    height: 80px;
+}
+.enlace-home {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 50%;
+}
+.enlace-home a {
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 7px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.conten .enlace-home a img {
+    position: absolute; 
+    width: 9%;
+    height: 100%;
+    margin: 0 25%;
+    display: inline-block;
+}
+.mayaj-title {
+    color: #fff;
+    font-family: 'Mr Bedfort', cursive;
+    text-align: center;
+    margin-right: 18%;
+}
 .menu .container-btn-menu{
     /*display: flex;*/
     display: none;
@@ -206,6 +238,152 @@
     .menu .contenedor {
         width: 100%;
     }
+    .conten .enlace-home a img {
+        position: absolute; 
+        width: 18%;
+        height: 100%;
+        margin: 0 15%;
+        display: inline-block;
+    }
+    .mayaj-title {
+        color: #fff;
+        font-family: 'Mr Bedfort', cursive;
+        text-align: center;
+        margin-left: 5%;
+    }
+}
+@media  screen and (max-width: 1300px) {
+    .menu .contenedor {
+        width: 90%;
+    }
+    .menu .container-btn-menu {
+        display: flex;
+    }
+    .menu .container-enlaces-nav {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        left: 0;
+        background: #232f3e;
+        height: 100vh;
+        width: 80%;
+        z-index: 2000;
+        transition: .3s ease all;
+        transform: translate(-100% );
+    }
+    .menu .container-enlaces-nav.activo {
+        transform: translate(0%);
+    }
+    .menu .btn-secciones {
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+    }
+    .menu .btn-secciones i {
+        position: static;
+        margin-left: 20px;
+        transform: rotate(-90deg );
+    }
+    .menu .enlaces{
+        width: 100%;
+    }
+    .menu .enlaces a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .grid {
+        display: grid;
+        transition: .3s ease all;
+        transform: translate(-100%);
+        z-index: 3000;
+        width: 80%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        grid-template-areas: "categoria categoria categoria categoria";
+    }
+
+    .grid.activo {
+        transform: translate(0);
+    }
+    .grid::before{
+        display: none;
+    }
+    .grid .btn-regresar {
+        display: inline-block;
+    }
+    .grid .categoria .subtitulo {
+        display: block;
+    }
+
+    .grid .contenedor-subcategoria {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: .3s ease all;
+        overflow: auto;
+    }
+    .grid .contenedor-subcategoria.activo {
+        transform: translate(0);
+    }
+    .grid .contenedor-subcategoria .subcategoria {
+        grid-template-columns: 1fr;
+
+    }
+    .grid .contenedor-subcategoria .baner-subcategoria {
+        width: 100%;
+        min-height: 250px;
+        max-height: 350px;
+    }
+    .grid .contenedor-subcategoria .enlaces-subcategoria {
+        min-height: 50vh;
+        overflow: auto;
+    }
+    .grid .contenedor-subcategoria .galeria-subcategoria {
+        width: 25%;
+        height: 100%;
+    }
+
+    .conten .enlace-home a img {
+        position: absolute; 
+        width: 14%;
+        height: 100%;
+        margin: 0 15%;
+        display: inline-block;
+    }
+    .mayaj-title {
+        color: #fff;
+        font-family: 'Mr Bedfort', cursive;
+        text-align: center;
+        margin-right: 20%;
+    }
+    
+}
+
+@media  screen and (max-width: 900px) {
+    .conten .enlace-home a img {
+        position: absolute; 
+        width: 20%;
+        height: 100%;
+        margin: 0 15%;
+        display: inline-block;
+    }
+    .mayaj-title {
+        color: #fff;
+        font-family: 'Mr Bedfort', cursive;
+        text-align: center;
+        margin-right: 5%;
+    }
+    
 }
 
 @media screen and (max-width:800px) {
@@ -307,5 +485,34 @@
     .grid .contenedor-subcategoria .galeria-subcategoria {
         width: 25%;
         height: 100%;
+    }
+    
+    .conten .enlace-home a img {
+        position: absolute; 
+        width: 20%;
+        height: 100%;
+        margin: 0 15%;
+        display: inline-block;
+    }
+    .mayaj-title {
+        color: #fff;
+        font-family: 'Mr Bedfort', cursive;
+        text-align: center;
+        margin-right: 5%;
+    }
+}
+@media screen and (max-width: 430px) {
+    .conten .enlace-home a img {
+        position: absolute; 
+        width: 35%;
+        height: 100%;
+        margin: 0 15%;
+        display: inline-block;
+    }
+    .mayaj-title {
+        color: #fff;
+        font-family: 'Mr Bedfort', cursive;
+        text-align: center;
+        margin-left: 50%;
     }
 }

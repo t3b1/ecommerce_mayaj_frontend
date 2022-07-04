@@ -3,7 +3,7 @@ const btndecoraciones = document.getElementById('btn-secciones'),
       grid = document.getElementById('grid'),
       conterEnlacesNav = document.querySelector('#menu .container-enlaces-nav'),
       conterSubcategory = document.querySelector('#grid .contenedor-subcategoria'),
-      responseMovil = () => window.innerWidth <= 800;
+      responseMovil = () => window.innerWidth <= 1300;
 
 btndecoraciones.addEventListener('mouseover', () =>{
     if (!responseMovil()){
